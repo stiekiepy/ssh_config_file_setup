@@ -1,0 +1,7 @@
+---
+- name: configure user SSH config
+  ansible.builtin.template:
+    src: user_config.j2
+#    dest: ~/.ssh/config
+    dest: config_ssh_test
+    mode: '0644'

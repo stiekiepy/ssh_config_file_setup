@@ -1,0 +1,23 @@
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: include roles specified in os group_vars
+      ansible.builtin.include_role:
+        apply:
+          tags: ["{{ role }}"]
+        name: "{{ role }}"
+      loop: "{{ roles }}"
+      loop_control:
+        loop_var: role
+      tags: [always]
+      
+    # - name: ssh role
+    #   ansible.builtin.include_role:
+    #     name: ssh
+    #   tags: [always]
+
+    # - name: test git role 
+    #   ansible.builtin.include_role:
+    #     name: git
+    #   tags: [always]

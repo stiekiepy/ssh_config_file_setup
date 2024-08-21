@@ -1,0 +1,13 @@
+{# ~/.ssh/config #}
+# {{ ansible_managed }}
+{% for dc in ssh_datacenters | default([]) | sort(attribute='slug') +%}
+# {{ company }}: {{ dc.name }}, SLUG: {{ dc.slug }}
+Host *-{{ dc.slug }} *.{{ dc.slug }}.{{ company }}.com *-{{ dc.slug }}.{{ company }}.com {% if dc.id is defined %}10.{{ dc.id }}.* 2600:3c0f:{{ dc.id }}:*{% endif +%}
+  Ciphers +aes256-cbc
+  HostKeyAlgorithms +ssh-rsa
+  KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+  ProxyJump jumpbox-{{ dc.slug }}.{{ company }}.com
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  StrictHostKeyChecking no
+{% endfor %}
+

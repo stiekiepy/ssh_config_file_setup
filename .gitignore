@@ -1,0 +1,6 @@
+.ansible/
+venv/
+.DS_Store
+config_ssh_test
+roles/zsh/
+roles/git/

@@ -1,0 +1,12 @@
+---
+ssh_datacenters:
+  - name: Example city
+    slug: city
+    id: 10
+  - name: Example city 1
+    slug: city1
+    id: 11
+  - name: Example city 2
+    slug: city2
+    id: 12
+  
