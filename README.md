@@ -29,7 +29,7 @@ In **group_vars/all.yml** is where your .com domain name lives. Example www.your
 
 The ssh/config file template can be changed however you need. Located in **roles/ssh/templates/user_config.j2**
 
-## 4. Run the ssh config generator, it will generate a test file in the local directory if you followed the first step in this document
+## 4. Run the ssh config generator, it will generate a test file in the local directory if you followed the second step in this document
 ```
 ansible-playbook ssh.yml
 ```
@@ -40,7 +40,7 @@ ansible-playbook ssh.yml
 cat config_ssh_test
 ```
 
-## 6. If it looks good, backup your existing config file if it has data in it, then comment/uncomment the lines in the first step above.
+## 6. If it looks good, backup your existing config file if it has data in it, then swap the comment/uncomment  lines in the second step above.
 ```
 mv ~/.ssh/config ~/.ssh/config.old
 ```
