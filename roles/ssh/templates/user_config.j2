@@ -11,3 +11,15 @@ Host *-{{ dc.slug }} *.{{ dc.slug }}.{{ company }}.com *-{{ dc.slug }}.{{ compan
   StrictHostKeyChecking no
 {% endfor %}
 
+# {{ company }}: jumpboxes
+Host jumpbox*-* jumpbox*-*.{{ company }}.com
+  User root
+  DynamicForward 9090
+
+# {{ company }}: console servers
+Host con?-*
+  User root:serial
+Host con??-*
+  User root:serial
+Host con???-*
+  User root:serial
