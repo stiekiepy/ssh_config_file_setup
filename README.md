@@ -54,5 +54,9 @@ mv ~/.ssh/config ~/.ssh/config.old
 ## 7. If all is good, you should be able to directly put in the device domain name to SSH to it via the jumpbox.
 
 ```
-ssh router1-ord.yourcompany.com
+ssh router1-ord.yourcompany.com 
+
+or 
+
+ssh router1-ord
 ```
